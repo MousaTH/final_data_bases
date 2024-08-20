@@ -62,12 +62,6 @@ class ProductController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy($id)
-    {
-        $product = Product::findOrFail($id);
-        $product->delete();
-        return redirect()->route('showProduct')->with('success','Product deleted successfully');
-    }
 
     /*
      * for api CRUD operation

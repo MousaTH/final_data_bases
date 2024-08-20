@@ -17,12 +17,10 @@
 @endif
 @foreach($products as $product)
     <div>
-        <form action="{{route('showProduct.destroy'),$product->id}}" method="POST">
             <h2>{{$product->name_of_product}}</h2>
             <p>{{$product->description_of_product}}</p>
             <p>{{$product->categories->category_name}}</p>
-            <button type="submit">Delete</button>
-        </form>
+
     </div>
 @endforeach
 </body>
