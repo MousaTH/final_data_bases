@@ -1,6 +1,14 @@
 <?php
 
 return [
+//    'providers' => [
+//        // Other service providers
+//        Intervention\Image\ImageServiceProvider::class,
+//    ],
+//    'aliases' => [
+//        // Other facades
+//        'Image' => Intervention\Image\Facades\Image::class,
+//    ],
 
     /*
     |--------------------------------------------------------------------------
