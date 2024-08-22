@@ -42,7 +42,7 @@ class ProductController extends Controller
         $product = Product::create($validated);
         return response()->json($product);
     }
-
+//23101976
     /**
      * Display the specified resource.
      */
