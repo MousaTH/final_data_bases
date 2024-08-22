@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller{
-    
+
     public function register(Request $request){
         $Data = $request->validate([
             'first_name' => 'required|string|max:255',

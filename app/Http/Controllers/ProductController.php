@@ -14,7 +14,7 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::with('categories')->get();
-        return view('showProduct',compact('products'));
+        return response ()->json($products);
 
     }
     public function create(){
@@ -30,11 +30,17 @@ class ProductController extends Controller
         $validated = $request->validate([
             'name_of_product' => 'required|string|max:255',
             'description_of_product' => 'nullable|string',
-            'image_of_product' => 'nullable|string',
+            'image_of_product' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'categories_id' =>'required|numeric|exists:categories,id',
         ]);
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('products', 'public');
+            $validated['image_of_product'] = $imagePath;
+        }else{
+            $validated['image_of_product'] = null;
+        }
         $product = Product::create($validated);
-        return redirect()->route('showProduct')->with('success','Product created successfully');
+        return response()->json($product);
     }
 
     /**

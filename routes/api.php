@@ -11,7 +11,7 @@ Route::resource('/categories',CategoryController::class);
 
 
 Route::post('/register',AuthController::class . '@register');
-Route::post('/login',AuthController::class . '@login')->middleware('auth:sanctum');
+Route::post('/login',AuthController::class .'@login')->middleware('auth:sanctum');
 Route::post('/logout',AuthController::class . '@logout')->middleware('auth:sanctum');
 
 
