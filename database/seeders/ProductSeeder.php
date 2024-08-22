@@ -16,7 +16,7 @@ class ProductSeeder extends Seeder
         Product::create([
             'name_of_product' =>"Product 1",
             'description_of_product' => 'Product 1 description',
-            'image_of_product' => 'Image 1',
+           // 'image_of_product' => 'Image 1',
             'categories_id' => 1,
         ]);
     }
