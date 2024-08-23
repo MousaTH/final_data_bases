@@ -1,14 +1,13 @@
-<?php
 
+<?php
+//$image = \Intervention\Image\Facades\Image::make('path/to/image.jpg');
+use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
+
+//$manager = new ImageManager(new Driver());
+//$image = $manager->read('path/to/image.jpg');
 return [
-//    'providers' => [
-//        // Other service providers
-//        Intervention\Image\ImageServiceProvider::class,
-//    ],
-//    'aliases' => [
-//        // Other facades
-//        'Image' => Intervention\Image\Facades\Image::class,
-//    ],
+
     /*
     |--------------------------------------------------------------------------
     | Application Name
@@ -110,12 +109,16 @@ return [
         ...array_filter(
             explode(',', env('APP_PREVIOUS_KEYS', ''))
         ),
-       // Intervention\Image\ImageServiceProvider::class,
-
+    ],
+    'providers' => [
+        // Other service providers...
+        App\Providers\InterventionImageServiceProvider::class,
+        Illuminate\Filesystem\FilesystemServiceProvider::class,
+        Illuminate\Cache\CacheServiceProvider::class,
     ],
 //    'aliases' => [
 //        // Other aliases...
-//        'Image' => Intervention\Image\Facades\Image::class,
+//        'Image' => Intervention\Image\Laravel\Facades\Image::class,
 //    ],
     /*
     |--------------------------------------------------------------------------
