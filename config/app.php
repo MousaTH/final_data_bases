@@ -9,7 +9,6 @@ return [
 //        // Other facades
 //        'Image' => Intervention\Image\Facades\Image::class,
 //    ],
-
     /*
     |--------------------------------------------------------------------------
     | Application Name
@@ -111,8 +110,13 @@ return [
         ...array_filter(
             explode(',', env('APP_PREVIOUS_KEYS', ''))
         ),
-    ],
+       // Intervention\Image\ImageServiceProvider::class,
 
+    ],
+//    'aliases' => [
+//        // Other aliases...
+//        'Image' => Intervention\Image\Facades\Image::class,
+//    ],
     /*
     |--------------------------------------------------------------------------
     | Maintenance Mode Driver
